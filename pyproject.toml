@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "sayvai-bot"
+version = "0.1.0"
+description = ""
+authors = ["esakkisubash <esakkisubash88@gmail.com>"]
+readme = "README.md"
+
+[[tool.poetry.source]]
+name = "rasa-plus"
+url = "https://europe-west3-python.pkg.dev/rasa-releases/rasa-plus-py/simple"
+priority = "supplemental"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+rasa = {extras = ["full"], version = "^3.6.20"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

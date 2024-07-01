@@ -1,0 +1,19 @@
+flows:
+  pattern_human_handoff:
+    description: human handoff
+    name: pattern human handoff
+    steps:
+        action: utter_human_handoff_not available
+
+
+flows:
+  pattern_internal_error:
+  description: internal handoff
+  steps:
+      action: utter_internal_error_response
+slots:
+  name:
+    type: text
+responses:
+  utter_internal_erroe_reponse:
+    text: "There was an internal error.Please, try again later"

@@ -1,0 +1,23 @@
+say_hello:
+  description: "greet the user"
+  steps:
+      action: "utter_greet"
+      link: "collect_personal_details"
+collect_personal_details:
+  description: "gather personal details from the user"
+  steps:
+      collect: "first_name"
+      collect: "last_name"
+      collect: "age"
+      link: ":age_limit"
+age_limit:
+  description: "check the users age"
+    next:
+        if slot.age < 18
+          then:
+              action: "utter_too_young"
+              next: END
+        else:
+          action: "utter_too_enough"
+              link: "some_other-flow"   
+
